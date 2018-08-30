@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive Example</title>
+    <style>
+        /* Kaikille näytöille yhteiset */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            color: #f2f2f2;
+            display: block;
+            float: left;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav .icon {
+            float: right;
+        }
+        .dropdown {
+            display: block;
+            clear: both;
+            display: none;
+            overflow: hidden;
+        }
+
+        .dropdown a {
+            display: block;
+            float:none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .show {
+            display: block;
+        }
+        
+        @media screen and (min-width: 600px) {
+
+            .topnav .icon {
+                display: none;
+            }
+
+            .dropdown {
+                clear: none;
+                float: left;
+                display: block;
+            }
+
+            .dropdown a {
+                float: left;
+                clear: none;
+                width: auto;
+            }
+
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <a href="javascript:void(0);" data-target="dropdown" class="icon" onclick="menu(this.dataset.target)">
+            <i class="fa fa-bars"></i>
+        </a>
+        <div class="dropdown" id="dropdown">
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+        </div>
+    </div>
+              
+    <div style="padding-left:16px">
+        <h2>Responsive Topnav Example</h2>
+        <p>Resize the browser window to see how it works.</p>
+    </div>
+
+    <script>
+    function menu(id) {
+        element = document.getElementById(id)
+        element.classList.toggle('show');
+    }
+    </script>
+    
+</body>
+</html>
